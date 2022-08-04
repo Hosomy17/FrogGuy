@@ -11,15 +11,13 @@ public class Player : MonoBehaviour
     
     private Rigidbody2D rig;
     private Animator anim;
-        
-    // Start is called before the first frame update
+    
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         Move();
@@ -76,6 +74,11 @@ public class Player : MonoBehaviour
         {
             isJumping = false;
             anim.SetBool("jump", false);
+        }
+
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            Debug.Log("Morreu");
         }
     }
     
