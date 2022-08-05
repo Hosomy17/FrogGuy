@@ -21,11 +21,13 @@ public class GameController : MonoBehaviour
     void Start()
     {
         instance = this;
+        totalScore = PlayerPrefs.GetInt("TotalScore", 0);
+        cacheScore = totalScore;
     }
 
     public void Update()
     {
-        cacheScore += 0.2f;
+        cacheScore += 0.5f;
         cacheScore = Mathf.Clamp(cacheScore, 0, totalScore);
         
         _text.text = String.Format("{0,5:D5}", (int)cacheScore);
@@ -39,6 +41,11 @@ public class GameController : MonoBehaviour
     public void RestartGame(string lvlName)
     {
         StartCoroutine(WaitToRestart(lvlName));
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetInt("TotalScore", totalScore);
     }
 
     public IEnumerator WaitToRestart(string lvlName)

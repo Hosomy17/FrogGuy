@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     {
         MusicController.Instance.PlayMusic();
         MusicController.Instance.StandMusic = true;
+        PlayerPrefs.SetInt("TotalScore", 0);
     }
 
     public void PlayGame()
