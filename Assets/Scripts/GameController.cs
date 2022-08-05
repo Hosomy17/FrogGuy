@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -37,8 +38,13 @@ public class GameController : MonoBehaviour
 
     public void RestartGame(string lvlName)
     {
+        StartCoroutine(WaitToRestart(lvlName));
+    }
+
+    public IEnumerator WaitToRestart(string lvlName)
+    {
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(lvlName);
-            
     }
     
     

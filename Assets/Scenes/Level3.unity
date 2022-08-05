@@ -2612,6 +2612,14 @@ PrefabInstance:
     - target: {fileID: 5737702796608058566, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 659597775}
+    - target: {fileID: 5737702796608058566, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737702796608058566, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Level3
       objectReference: {fileID: 0}
     - target: {fileID: 5737702797634093784, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
       propertyPath: m_Name
@@ -8518,10 +8526,6 @@ PrefabInstance:
     - target: {fileID: 2918191857049835514, guid: 6719c3d63d8f6db40ad2e8b91af93663, type: 3}
       propertyPath: m_Name
       value: Saw
-      objectReference: {fileID: 0}
-    - target: {fileID: 2918191857049835514, guid: 6719c3d63d8f6db40ad2e8b91af93663, type: 3}
-      propertyPath: m_TagString
-      value: Obstacle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6719c3d63d8f6db40ad2e8b91af93663, type: 3}
