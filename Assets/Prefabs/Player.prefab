@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4184731835551618883}
   - component: {fileID: 2541324612996656053}
   - component: {fileID: 2541324612996656054}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -140,6 +140,7 @@ MonoBehaviour:
   isJumping: 0
   doubleJump: 0
   _jumpSFX: {fileID: 8300000, guid: 42ad8e4478c784946b4c0b5d75c4620f, type: 3}
+  _hitSFX: {fileID: 8300000, guid: 0de59d7022bd52f4486f8f2c51aadb40, type: 3}
 --- !u!95 &2541324612996656054
 Animator:
   serializedVersion: 3

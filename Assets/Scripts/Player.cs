@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private AudioClip _jumpSFX;
     
+    [SerializeField]
+    private AudioClip _hitSFX;
+    
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
@@ -84,15 +87,18 @@ public class Player : MonoBehaviour
             isJumping = false;
             anim.SetBool("jump", false);
         }
+    }
 
-        if (collision.gameObject.tag == "Fire")
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Fire"))
         {
             GameController.instance.ShowGameOver();
+            AudioSource.PlayClipAtPoint(_hitSFX, Vector3.back*10);
             Destroy(gameObject);
-
         }
     }
-    
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)
