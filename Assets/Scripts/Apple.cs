@@ -28,7 +28,7 @@ public class Apple : MonoBehaviour
             collected.SetActive(true);
 
             GameController.instance.totalScore += Score;
-            
+
             AudioSource.PlayClipAtPoint(_pickSFX, Vector3.back * 10);
             
             Destroy(gameObject, 0.25f);
