@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 public class Apple : MonoBehaviour
@@ -31,7 +32,12 @@ public class Apple : MonoBehaviour
 
             AudioSource.PlayClipAtPoint(_pickSFX, Vector3.back * 10);
             
-            Destroy(gameObject, 0.25f);
+            Invoke("DisableApple", 0.25f);
         }
+    }
+
+    private void DisableApple()
+    {
+        gameObject.SetActive(false);
     }
 }

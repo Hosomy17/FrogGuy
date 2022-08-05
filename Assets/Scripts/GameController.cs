@@ -1,22 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 
 public class GameController : MonoBehaviour
 {
     public int totalScore;
+    private float cacheScore;
 
     public static GameController instance;
 
     public GameObject gameOver;
+
+    [SerializeField]
+    private TMP_Text _text;
     
     
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
+    }
+
+    public void Update()
+    {
+        cacheScore += 0.2f;
+        cacheScore = Mathf.Clamp(cacheScore, 0, totalScore);
+        
+        _text.text = String.Format("{0,5:D5}", (int)cacheScore);
     }
 
     public void ShowGameOver()
@@ -27,6 +38,7 @@ public class GameController : MonoBehaviour
     public void RestartGame(string lvlName)
     {
         SceneManager.LoadScene(lvlName);
+            
     }
     
     
