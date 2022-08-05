@@ -816,7 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalScore: 0
-  gameOver: {fileID: 2068573151}
+  gameOver: {fileID: 1827214924}
+  _text: {fileID: 692291575}
 --- !u!4 &659597776
 Transform:
   m_ObjectHideFlags: 0
@@ -831,6 +832,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &692291575 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 692291575, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
+  m_PrefabInstance: {fileID: 5737702797757895907}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &728583007 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8216157619943174443, guid: 1ba3eb533af2e524f9d5a0bfb13ab95c, type: 3}
@@ -2964,6 +2976,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1827214924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5737702795697733436, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
+  m_PrefabInstance: {fileID: 5737702797757895907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1869682280
 GameObject:
   m_ObjectHideFlags: 0
@@ -5593,11 +5610,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.28, y: 0.46593094}
   m_EdgeRadius: 0
---- !u!1 &2068573151 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5737702795697733436, guid: d463652001aa0f44dbe44dc94c166fe6, type: 3}
-  m_PrefabInstance: {fileID: 5737702797757895907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2074656744
 PrefabInstance:
   m_ObjectHideFlags: 0
