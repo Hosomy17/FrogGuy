@@ -76,9 +76,11 @@ public class Player : MonoBehaviour
             anim.SetBool("jump", false);
         }
 
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag == "Fire")
         {
-            Debug.Log("Morreu");
+            GameController.instance.ShowGameOver();
+            Destroy(gameObject);
+
         }
     }
     
