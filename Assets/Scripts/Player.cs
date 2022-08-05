@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     
     private Rigidbody2D rig;
     private Animator anim;
+
+    [SerializeField]
+    private AudioClip _jumpSFX;
     
     void Start()
     {
@@ -94,5 +97,6 @@ public class Player : MonoBehaviour
     {
         rig.velocity *= Vector2.right;
         rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+        AudioSource.PlayClipAtPoint(_jumpSFX, Vector3.back*10);
     }
 }

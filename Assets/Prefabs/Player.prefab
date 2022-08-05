@@ -149,6 +149,7 @@ MonoBehaviour:
   JumpForce: 10
   isJumping: 0
   doubleJump: 0
+  _jumpSFX: {fileID: 8300000, guid: 42ad8e4478c784946b4c0b5d75c4620f, type: 3}
 --- !u!95 &2541324612996656054
 Animator:
   serializedVersion: 3
