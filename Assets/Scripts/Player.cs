@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         {
             if (!isJumping)
             {
-                rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+                JumpFixedGravity();
                 doubleJump = true;
                 anim.SetBool("jump", true);
             }
@@ -61,7 +61,7 @@ public class Player : MonoBehaviour
             {
                 if (doubleJump)
                 {
-                    rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
+                    JumpFixedGravity();
                     doubleJump = false;
                 }
             }
@@ -88,5 +88,11 @@ public class Player : MonoBehaviour
         {
             isJumping = true;
         }
+    }
+
+    void JumpFixedGravity()
+    {
+        rig.velocity *= Vector2.right;
+        rig.AddForce(new Vector2(0f, JumpForce), ForceMode2D.Impulse);
     }
 }
