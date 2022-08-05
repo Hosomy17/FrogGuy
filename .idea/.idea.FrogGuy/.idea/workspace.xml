@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae381aa2-cb64-4e18-a28f-33884ef4da18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.FrogGuy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FrogGuy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sounds/jump.wav.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sounds/jump.wav.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Apple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Apple.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +73,7 @@
       <updated>1659623137253</updated>
       <workItem from="1659623158463" duration="741000" />
       <workItem from="1659637387112" duration="1421000" />
-      <workItem from="1659657506171" duration="5232000" />
+      <workItem from="1659657506171" duration="5542000" />
     </task>
     <servers />
   </component>
