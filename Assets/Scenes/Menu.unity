@@ -3199,7 +3199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a86bb2c0dfd631448a1b7329b367979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _standTime: 4.37
+  _standTime: 4.38
+  _loopTime: 2.19
 --- !u!4 &635748644
 Transform:
   m_ObjectHideFlags: 0
@@ -3228,7 +3229,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3461,7 +3462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1506127697}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &824365202

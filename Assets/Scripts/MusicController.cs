@@ -12,6 +12,9 @@ public class MusicController : MonoBehaviour
 
     [SerializeField]
     private float _standTime;
+    [SerializeField]
+    private float _loopTime;
+    
     public static MusicController Instance => _instance;
 
     public bool StandMusic
@@ -54,7 +57,7 @@ public class MusicController : MonoBehaviour
         {
             if (_standMusic && _BGM.time >= _standTime)
             {
-                _BGM.time = 0f;
+                _BGM.time = _loopTime;
             }
 
             yield return null;

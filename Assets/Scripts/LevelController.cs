@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
     private IEnumerator OpenNextLevel()
     {
         GameController.instance.SaveScore();
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(_level);
     }
 
