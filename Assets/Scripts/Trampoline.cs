@@ -9,6 +9,9 @@ public class Trampoline : MonoBehaviour
     
     public float jumpForce;
 
+    [SerializeField]
+    private AudioClip _audioClip;
+
     private void Start()
     {
         anim = GetComponent<Animator>();
@@ -20,6 +23,7 @@ public class Trampoline : MonoBehaviour
         {
             anim.SetTrigger("jump");
             collision.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            AudioSource.PlayClipAtPoint(_audioClip, Vector3.back*10);
         }
     }
 }
