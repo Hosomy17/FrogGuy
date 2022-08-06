@@ -14,7 +14,8 @@ public class Trampoline : MonoBehaviour
 
     private void Start()
     {
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
+        TryGetComponent(out anim);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

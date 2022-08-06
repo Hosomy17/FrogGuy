@@ -1,8 +1,13 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
+    [Header("Input")]
+    private PlayerInputs actions;
+    
     public float Speed;
     public float JumpForce;
 
@@ -11,71 +16,94 @@ public class Player : MonoBehaviour
     
     private Rigidbody2D rig;
     private Animator anim;
+    
+    private float _movement;
 
     [SerializeField]
     private AudioClip _jumpSFX;
     
     [SerializeField]
     private AudioClip _hitSFX;
-    
-    void Start()
+
+    private void Awake()
     {
-        rig = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-    }
-    
-    void Update()
-    {
-        Move();
-        Jump();
+        actions = new PlayerInputs();
+
+        actions.Player.Movement.performed += Move;
+        actions.Player.Movement.canceled += Move;
+
+        actions.Player.Jump.performed += Jump;
     }
 
-    void Move()
+    private void OnEnable()
+    {
+        actions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        actions.Player.Movement.performed -= Move;
+        actions.Player.Movement.canceled -= Move;
+
+        actions.Player.Jump.performed -= Jump;
+        
+        actions.Disable();
+    }
+
+    void Start()
+    {
+        //rig = GetComponent<Rigidbody2D>();
+        TryGetComponent(out rig);
+        //anim = GetComponent<Animator>();
+        TryGetComponent(out anim);
+    }
+    
+    void FixedUpdate()
+    {
+        rig.velocity = new Vector2(_movement * Speed, rig.velocity.y);
+    }
+
+    void Move(InputAction.CallbackContext movement)
     {
         //mudanca na movimentacao de:
         //Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         //transform.position += movement * Time.deltaTime * Speed;
         
         //para:
-        float movement = Input.GetAxis("Horizontal");
-
-        rig.velocity = new Vector2(movement * Speed, rig.velocity.y);
-
-        if (movement > 0f)
+        _movement = movement.ReadValue<Vector2>().x;
+        
+        if (_movement > 0f)
         {
             anim.SetBool("walk", true);
             transform.eulerAngles = new Vector3(0f, 0f, 0f);
         }
         
-        if (movement < 0f)
+        if (_movement < 0f)
         {
             anim.SetBool("walk", true);
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }
         
-        if (movement == 0f)
+        if (_movement == 0f)
         {
             anim.SetBool("walk", false);
         }
     }
 
-    void Jump()
+    void Jump(InputAction.CallbackContext _)
     {
-        if (Input.GetButtonDown("Jump"))
+        if (isJumping == false)
         {
-            if (!isJumping)
+            JumpFixedGravity();
+            doubleJump = true;
+            anim.SetBool("jump", true);
+        }
+        else
+        {
+            if (doubleJump)
             {
                 JumpFixedGravity();
-                doubleJump = true;
-                anim.SetBool("jump", true);
-            }
-            else
-            {
-                if (doubleJump)
-                {
-                    JumpFixedGravity();
-                    doubleJump = false;
-                }
+                doubleJump = false;
             }
         }
     }
