@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2059587241236644411}
   - component: {fileID: 2536524763419571872}
   - component: {fileID: 9149694713765166527}
+  - component: {fileID: 176602175415262056}
+  - component: {fileID: 1336779467281573317}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Fire
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2752156577680114863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +78,7 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
+  m_DrawMode: 2
   m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
@@ -95,7 +97,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -0.004674729, y: -0.045578547}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,9 +105,66 @@ BoxCollider2D:
     oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   serializedVersion: 2
   m_Size: {x: 0.14831316, y: 0.0688429}
   m_EdgeRadius: 0
+--- !u!50 &176602175415262056
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752156577680114863}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &1336779467281573317
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2752156577680114863}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 9149694713765166527}
+    m_ColliderPaths:
+    - - X: 2084162
+        Y: -2400000
+      - X: 2084162
+        Y: -334713
+      - X: -2364939
+        Y: -335005
+      - X: -2364646
+        Y: -2399999
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 0.2083869, y: -0.24000001}
+      - {x: 0.2083869, y: -0.0334713}
+      - {x: -0.2364939, y: -0.0335298}
+      - {x: -0.23643531, y: -0.2399999}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
